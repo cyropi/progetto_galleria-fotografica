@@ -193,3 +193,52 @@ BEGIN
 	RETURN NULL;
 END;
 $BODY$;
+
+
+
+CREATE OR REPLACE FUNCTION public.limite_fotografie_per_utente()
+    RETURNS trigger
+    LANGUAGE 'plpgsql'
+    COST 100
+    VOLATILE NOT LEAKPROOF
+AS $BODY$
+DECLARE
+	v_counter integer;
+	
+BEGIN
+	SELECT count(*) INTO v_counter
+	FROM fotografia AS f
+	WHERE f.id_utente = NEW.id_utente;
+	
+	IF v_counter > 1000
+		THEN RAISE EXCEPTION 'HAI RAGGIUNTO IL LIMITE MASSIMO DI FOTO!';
+	END IF;
+
+	RETURN NULL;
+END; 
+$BODY$;
+
+
+
+CREATE OR REPLACE FUNCTION public.limite_utenti_sistema()
+    RETURNS trigger
+    LANGUAGE 'plpgsql'
+    COST 100
+    VOLATILE NOT LEAKPROOF
+AS $BODY$
+DECLARE
+	v_id_utente utente.id_utente%type;
+	
+BEGIN
+	SELECT u.id_utente INTO v_id_utente
+	FROM utente AS u
+	ORDER BY u.id_utente DESC
+	LIMIT 1;
+	
+	IF v_id_utente > 99999
+		THEN RAISE EXCEPTION 'RAGGIUNTO IL LIMITE MASSIMO DI UTENTI!';
+	END IF;
+
+	RETURN NULL;
+END; 
+$BODY$;
