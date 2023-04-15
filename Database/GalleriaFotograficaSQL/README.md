@@ -13,7 +13,7 @@ Si faranno, di seguito, una serie di commenti riguardanti eventuali dubbi che po
 &nbsp; 
 
 # Tabelle
-Le tabelle sono state implementate seguendo esattamente l'UML diagram e lo schema logico presente nella documentazione; unico appunto va fatto per quanto riguarda la messa in pratica delle Foreign Key. Ogni FK, di ogni tabella, ha il seguente schema di base: 
+Le tabelle sono state implementate seguendo esattamente il Class Diagram e lo schema logico presente nella documentazione; unico appunto va fatto per quanto riguarda la messa in pratica dei trigger delle Foreign Key. Ogni FK, di ogni tabella, ha il seguente schema di base: 
 
 ```bash
     CONSTRAINT constraint_name FOREIGN KEY (column_name)
@@ -22,7 +22,7 @@ Le tabelle sono state implementate seguendo esattamente l'UML diagram e lo schem
         ON DELETE CASCADE
 ```
 
-ad eccezione di due tabelle, ovvero FOTOGRAFIA e UTENTE_POSSIEDE_COLLEZIONE, dove, nella chiave esterna che si riferisce ad un utente, segue invece la seguente implementazione:
+ad eccezione della tabella FOTOGRAFIA, dove, nella chiave esterna che si riferisce all'utente, segue invece la seguente implementazione:
 
 ```bash
     CONSTRAINT constraint_name FOREIGN KEY (column_name)
@@ -31,7 +31,7 @@ ad eccezione di due tabelle, ovvero FOTOGRAFIA e UTENTE_POSSIEDE_COLLEZIONE, dov
         ON DELETE SET NULL
 ```
 
-Il motivo è giustificato dal fatto che, all'eliminazione di un utente, come da vincolo richiesto (vedasi Documentazione), non tutte le sue foto devono essere eliminate; se il trigger **ON DELETE** (di FOTOGRAFIA) venisse impostato a **CASCADE**, invece, ne sarebbero eliminate tutte di conseguenza. Le FK *id_utente* settate a NULL, sia in FOTOGRAFIA che in UTENTE_POSSIEDE_COLLEZIONE, avranno poi utilità nel trigger ***fotografie_dopo_eliminazione_utente***, che provvederà alla corretta eliminazione delle foto dell'utente appena eliminato.  
+Il motivo è giustificato dal fatto che, all'eliminazione di un utente, come da vincolo richiesto (vedasi Documentazione), non tutte le sue foto devono essere eliminate; se il trigger **ON DELETE** venisse impostato a **CASCADE**, invece, ne sarebbero eliminate tutte di conseguenza. La FK *id_utente* impostata a NULL avrà poi utilità nel trigger ***fotografie_dopo_eliminazione_utente***, che provvederà alla corretta eliminazione delle foto dell'utente appena eliminato.  
 
 &nbsp;
 
