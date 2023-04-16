@@ -8,6 +8,7 @@ CALL crea_utente( 'pasquale', 'esposito', 'pasqualeesposito92@virgilio.it', 'ita
 
 
 
+
 -- POPOLAMENTO TABELLE LUOGO E SOGGETTO
 CALL aggiungi_luogo( 'Roma' );
 CALL aggiungi_luogo( 'Milano' );
