@@ -487,14 +487,14 @@ Trigger che si attiva naturalmente dopo l'eliminazione di un utente dal sistema;
 1 - eliminare tutte le foto in cui l'*id_utente* della foto è NULL (che quindi si riferiscono all'utente appena eliminato) e che, contemporaneamente, l'*id_foto*...\
 2 - non è presente nella tabella FOTO_RAFFIGURA_UTENTE dove l'*id_utente*...\
 3 - si trova nella tabella UTENTE_POSSIEDE_COLLEZIONE in cui l'*id_collezione*...\
-4 - è presente nella tabella COLLEZIONE_RAGGRUPPA_FOTO in cui al suo interno gli è associato lo stesso *id_foto*, e in cui l'*id_collezione* è diverso dal vecchio ID dell'utente eliminato (quest'ultima condizione potrebbe anche essere trascurata, dato che tutti i riferimenti alla collezione personale dell'utente eliminato vengono già cancellaie dal trigger **collezione_personale_dopo_eliminazione_utente**, che si attiva prima di **fotografie_dopo_eliminazione_utente**).
+4 - è presente nella tabella COLLEZIONE_RAGGRUPPA_FOTO in cui al suo interno gli è associato lo stesso *id_foto*, e in cui l'*id_collezione* è diverso dal vecchio ID dell'utente eliminato (quest'ultima condizione potrebbe anche essere trascurata, dato che tutti i riferimenti alla collezione personale dell'utente eliminato vengono già cancellati dal trigger **collezione_personale_dopo_eliminazione_utente**, che si attiva prima di **fotografie_dopo_eliminazione_utente**).
 
-Saranno dunque eliminate tutte le foto che hanno *id_utente* uguale a NULL (punto 1), ma che devono rispettare anche la condizione di **non** raffigurare degli utenti (punto 2) che sono partecipanti ad una collezione condivisa in cui naturalmente esse sono presenti (punto 3 e 4). Leggendola dal basso verso l'alto: 
+Saranno dunque eliminate tutte le foto che hanno *id_utente* uguale a NULL (punto 1), ma che devono rispettare anche la condizione di **non** raffigurare degli utenti (punto 2) che sono partecipanti ad una collezione condivisa in cui naturalmente esse sono presenti (punto 3 e 4). Leggendolo dal basso verso l'alto: 
 
 4 - il punto 4 fa si che si vadano a selezionare tutte le collezioni condivise (*crf.id_collezione <> OLD.id_utente*) che contengono la foto da eliminare (*crf.id_foto = f.id_foto*); \
 3 - il punto 3 va a selezionare tutti gli utenti che partecipano alle collezioni condivise recuperate nel punto 4; \
 2 - il punto 2 va invece a selezionare tutte le foto che raffigurano gli utenti recuperati al punto 3; \
-1 - al termine della catena, il punto 1 va ad eliminare le foto che hanno l'*id_utente* uguale a NULL e l'*id_foto* **non** sono presente tra le foto recuperate al punto 2.
+1 - al termine della catena, il punto 1 va ad eliminare le foto che hanno l'*id_utente* uguale a NULL e l'*id_foto* **non** presente tra le foto recuperate al punto 2.
 
 &nbsp;
 
