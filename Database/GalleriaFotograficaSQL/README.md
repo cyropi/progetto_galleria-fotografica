@@ -13,6 +13,7 @@ Si faranno, di seguito, una serie di commenti riguardanti eventuali dubbi che po
 
 &nbsp; 
 
+
 # Tabelle
 Le tabelle sono state implementate seguendo esattamente il Class Diagram e lo schema logico presente nella documentazione; unico appunto va fatto per quanto riguarda la messa in pratica dei trigger delle Foreign Key. Ogni FK, di ogni tabella, ha il seguente schema di base: 
 
