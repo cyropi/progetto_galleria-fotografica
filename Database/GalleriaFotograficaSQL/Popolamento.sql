@@ -192,67 +192,58 @@ VALUES( 118, 1 );
 
 
 -- POPOLAMENTO COLLEZIONE PERSONALE UTENTE 4
+CALL aggiungi_fotografia( 'C:\Users\Public\Pictures\img.jpg', 'PC', 'Catania', 4);
+CALL aggiungi_fotografia( 'C:\Users\Public\Pictures\img.jpg', 'PC', 'Salerno', 4 );
+CALL aggiungi_fotografia( 'C:\Users\Public\Pictures\img.jpg', 'PC', 'Verona', 4 );
+CALL aggiungi_fotografia( 'C:\Users\Public\Pictures\img.jpg', 'PC', 'Firenza', 4 );
+CALL aggiungi_fotografia( 'C:\Users\Public\Pictures\img.jpg', 'PC', 'Napoli', 4 );	
+CALL aggiungi_fotografia( 'C:\Users\Public\Pictures\img.jpg', 'PC', 'Napoli', 4 );
 
-pasquale esposito
-	CALL aggiungi_fotografia( 'C:\Users\Public\Pictures\img.jpg', 'PC', 'Catania', 4);
-	CALL aggiungi_fotografia( 'C:\Users\Public\Pictures\img.jpg', 'PC', 'Salerno', 4 );
-	CALL aggiungi_fotografia( 'C:\Users\Public\Pictures\img.jpg', 'PC', 'Verona', 4 );
-	CALL aggiungi_fotografia( 'C:\Users\Public\Pictures\img.jpg', 'PC', 'Firenza', 4 );
-	CALL aggiungi_fotografia( 'C:\Users\Public\Pictures\img.jpg', 'PC', 'Napoli', 4 );	
-	CALL aggiungi_fotografia( 'C:\Users\Public\Pictures\img.jpg', 'PC', 'Napoli', 4 );
+CALL inserisci_fotografia_in_cestino( 123 );
+CALL inserisci_fotografia_in_cestino( 125 );
 
+CALL rendi_fotografia_privata_o_pubblica( 120, 'privata' );
+CALL rendi_fotografia_privata_o_pubblica( 121, 'privata' );
 
-	CALL inserisci_fotografia_in_cestino( 123 );
-	CALL inserisci_fotografia_in_cestino( 125 );
+CALL crea_video( 4, null );
+CALL inserisci_in_video_formato_da_foto( 120 );
+CALL inserisci_in_video_formato_da_foto( 122 );
+CALL inserisci_in_video_formato_da_foto( 124 );
 
-	CALL rendi_fotografia_privata_o_pubblica( 120, 'privata' );
-	CALL rendi_fotografia_privata_o_pubblica( 121, 'privata' );
+INSERT INTO foto_raffigura_soggetto( id_foto, id_soggetto )
+VALUES( 120, 1 );
+INSERT INTO foto_raffigura_soggetto( id_foto, id_soggetto )
+VALUES( 121, 6 );
+INSERT INTO foto_raffigura_soggetto( id_foto, id_soggetto )
+VALUES( 121, 3 );
+INSERT INTO foto_raffigura_soggetto( id_foto, id_soggetto )
+VALUES( 122, 10 );
+INSERT INTO foto_raffigura_soggetto( id_foto, id_soggetto )
+VALUES( 122, 7 );
+INSERT INTO foto_raffigura_soggetto( id_foto, id_soggetto )
+VALUES( 122, 2 );
+INSERT INTO foto_raffigura_soggetto( id_foto, id_soggetto )
+VALUES( 123, 4 );
+INSERT INTO foto_raffigura_soggetto( id_foto, id_soggetto )
+VALUES( 124, 9 );
+INSERT INTO foto_raffigura_soggetto( id_foto, id_soggetto )
+VALUES( 124, 8 );
+INSERT INTO foto_raffigura_soggetto( id_foto, id_soggetto )
+VALUES( 125, 2 );
 
-	CALL crea_video( 4, null );
-	CALL inserisci_in_video_formato_da_foto( 120 );
-	CALL inserisci_in_video_formato_da_foto( 122 );
-	CALL inserisci_in_video_formato_da_foto( 124 );
-
-
-	INSERT INTO foto_raffigura_soggetto( id_foto, id_soggetto )
-	VALUES( 120, 1 );
-
-	INSERT INTO foto_raffigura_soggetto( id_foto, id_soggetto )
-	VALUES( 121, 6 );
-
-	INSERT INTO foto_raffigura_soggetto( id_foto, id_soggetto )
-	VALUES( 121, 3 );
-
-	INSERT INTO foto_raffigura_soggetto( id_foto, id_soggetto )
-	VALUES( 122, 10 );
-
-	INSERT INTO foto_raffigura_soggetto( id_foto, id_soggetto )
-	VALUES( 122, 7 );
-
-	INSERT INTO foto_raffigura_soggetto( id_foto, id_soggetto )
-	VALUES( 122, 2 );
-
-	INSERT INTO foto_raffigura_soggetto( id_foto, id_soggetto )
-	VALUES( 123, 4 );
-
-	INSERT INTO foto_raffigura_soggetto( id_foto, id_soggetto )
-	VALUES( 124, 9 );
-
-	INSERT INTO foto_raffigura_soggetto( id_foto, id_soggetto )
-	VALUES( 124, 8 );
-
-	INSERT INTO foto_raffigura_soggetto( id_foto, id_soggetto )
-	VALUES( 125, 2 );
+INSERT INTO foto_raffigura_utente( id_foto, id_utente )
+VALUES( 122, 1 );
+INSERT INTO foto_raffigura_utente( id_foto, id_utente )
+VALUES( 122, 3 );
+INSERT INTO foto_raffigura_utente( id_foto, id_utente )
+VALUES( 125, 2 );
 
 
-	INSERT INTO foto_raffigura_utente( id_foto, id_utente )
-	VALUES( 122, 1 );
-
-	INSERT INTO foto_raffigura_utente( id_foto, id_utente )
-	VALUES( 122, 3 );
-
-	INSERT INTO foto_raffigura_utente( id_foto, id_utente )
-	VALUES( 125, 2 );
 
 
 -- CREAZIONE COLLEZIONI CONDIVISE
+CALL crea_collezione_condivisa( 1, 'pasqualeesposito92@virgilio.it', 'collezione condivisa 1' );
+CALL inserisci_fotografie_in_collezione_condivisa( 1, 'pasqualeesposito92@virgilio.it' );
+
+CALL crea_collezione_condivisa( 2, 'sofiaferrari87@libero.it', 'collezione condivisa 2');
+CALL inserisci_fotografie_in_collezione_condivisa( 2, 'sofiaferrari87@libero.it' );
