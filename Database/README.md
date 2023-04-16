@@ -8,7 +8,7 @@ Per testare il Database, potrebbe essere utile interagire con esso attraverso Po
 Nella cartella **GalleriaFotograficaSQL** si troverà il codice sorgente, in linguaggio SQL, usato per la creazione e lo sviluppo del database.
 
 Nella cartella **GalleriaFotograficaDB.zip** si troveranno, invece, una serie di files compressi ed estrapolati dal database già creato. Una volta scaricata ed
-esratta, la cartella ZIP può essere usato all'interno di Postgres per ripristinare il database senza doverlo creare manualmente. La procedura da seguire è la seguente:
+estratta, la cartella ZIP può essere usato all'interno di Postgres per ripristinare il database senza doverlo creare manualmente. La procedura da seguire è la seguente:
 
 ```bash
 - Aprire pgAdmin
