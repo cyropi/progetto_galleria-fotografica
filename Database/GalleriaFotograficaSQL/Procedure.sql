@@ -12,6 +12,7 @@ END;
 $BODY$;
 
 
+
 CREATE OR REPLACE PROCEDURE public.aggiungi_luogo(
 	IN "p_città" character varying)
 LANGUAGE 'plpgsql'
