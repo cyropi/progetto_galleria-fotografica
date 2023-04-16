@@ -43,7 +43,7 @@ Il popolamento di base del database (utile per verificarne il suo funzionamento)
 - Ogni fotografia del sistema ha lo stesso valore (non essendo visualizzabile direttamente nel DBMS, risulta indifferente);
 - Tra le 6 fotografie dell'utente, ognuna raffigura almeno un soggetto, mentre soltanto 2 raffigurano anche degli utenti del sistema;
 - Ogni utente possiede, oltre la rispettiva collezione personale, una collezione condivisa con un altro utente;
-- Nelle collezioni condivise create, sono state inserite tutte le fotografie personali (non eliminate e non private) degli utenti partecipanti ad essa;
+- Nelle collezioni condivise create, sono state inserite tutte le fotografie (non eliminate e non private) degli utenti partecipanti ad essa;
 - La tabella SOGGETTO è riempita con 10 categorie di default;
 - La tabella LUOGO è riempita con 20 città di default (sono state scelte le prime 20 città italiane per numero di abitanti).
 
