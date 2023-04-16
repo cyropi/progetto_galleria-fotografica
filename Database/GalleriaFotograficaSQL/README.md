@@ -1,7 +1,7 @@
 # SQL 
 
 Nel file **Tabelle.sql**, si troverà il codice relativo alle creazione delle *tabelle* presenti nel DB. \
-Nel file **Sequenze.sql**, si troverà il codice relativo alle creazione delle *sequenze* che saranno rispettate dagli ID di tipo serial. \
+Nel file **Sequenze.sql**, si troverà il codice relativo alle modifica delle *sequenze* che saranno rispettate dagli ID di tipo serial. \
 Nel file **Popolamento.sql**, si troverà il codice relativo al *popolamento* delle stesse tabelle presenti nel DB.\
 Nel file **Funzioni.sql**, si troverà il codice relativo alle creazione delle *funzioni* presenti nel DB. \
 Nel file **Procedure.sql**, si troverà il codice relativo alle creazione delle *procedure* presenti nel DB. \
