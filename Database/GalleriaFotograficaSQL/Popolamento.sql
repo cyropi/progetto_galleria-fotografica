@@ -247,3 +247,4 @@ CALL inserisci_fotografie_in_collezione_condivisa( 1, 'pasqualeesposito92@virgil
 
 CALL crea_collezione_condivisa( 2, 'sofiaferrari87@libero.it', 'collezione condivisa 2');
 CALL inserisci_fotografie_in_collezione_condivisa( 2, 'sofiaferrari87@libero.it' );
+
