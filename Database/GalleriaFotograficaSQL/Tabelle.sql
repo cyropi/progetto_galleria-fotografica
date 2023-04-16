@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS public.amministratore
 
 CREATE TABLE IF NOT EXISTS public.utente
 (
-    id_utente integer NOT NULL DEFAULT nextval('utente_id_utente_seq'::regclass),
+    id_utente serial,
     nome character varying(30) COLLATE pg_catalog."default",
     cognome character varying(30) COLLATE pg_catalog."default",
     email character varying(50) COLLATE pg_catalog."default",
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS public.utente
 
 CREATE TABLE IF NOT EXISTS public.fotografia
 (
-    id_foto integer NOT NULL DEFAULT nextval('fotografia_id_foto_seq'::regclass),
+    id_foto serial,
     val_foto bytea,
     dispositivo character varying(30) COLLATE pg_catalog."default",
     "città" character varying(30) COLLATE pg_catalog."default",
@@ -59,7 +59,7 @@ CREATE TABLE IF NOT EXISTS public.fotografia
 
 CREATE TABLE IF NOT EXISTS public.collezione
 (
-    id_collezione integer NOT NULL DEFAULT nextval('collezione_id_collezione_seq'::regclass),
+    id_collezione serial,
     personale smallint DEFAULT 1,
     nome character varying(30) COLLATE pg_catalog."default",
     CONSTRAINT pk_collezione PRIMARY KEY (id_collezione),
@@ -71,7 +71,7 @@ CREATE TABLE IF NOT EXISTS public.collezione
 
 CREATE TABLE IF NOT EXISTS public.video
 (
-    id_video integer NOT NULL DEFAULT nextval('video_id_video_seq'::regclass),
+    id_video serial,
     id_utente integer,
     descrizione text COLLATE pg_catalog."default",
     CONSTRAINT pk_video PRIMARY KEY (id_video),
@@ -86,7 +86,7 @@ CREATE TABLE IF NOT EXISTS public.video
 
 CREATE TABLE IF NOT EXISTS public.soggetto
 (
-    id_soggetto integer NOT NULL DEFAULT nextval('soggetto_id_soggetto_seq'::regclass),
+    id_soggetto serial,
     categoria character varying(30) COLLATE pg_catalog."default",
     CONSTRAINT pk_soggetto PRIMARY KEY (id_soggetto),
     CONSTRAINT uq_soggetto UNIQUE (categoria),
