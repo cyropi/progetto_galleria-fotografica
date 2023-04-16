@@ -143,10 +143,116 @@ VALUES( 108, 4 );
 
 
 -- POPOLAMENTO COLLEZIONE PERSONALE UTENTE 3
+CALL aggiungi_fotografia( 'C:\Users\Public\Pictures\img.jpg', 'PC', 'Milano', 3 );
+CALL aggiungi_fotografia( 'C:\Users\Public\Pictures\img.jpg', 'PC', 'Bergamo', 3 );
+CALL aggiungi_fotografia( 'C:\Users\Public\Pictures\img.jpg', 'PC', 'Bologna', 3 );
+CALL aggiungi_fotografia( 'C:\Users\Public\Pictures\img.jpg', 'PC', 'Napoli', 3 );
+CALL aggiungi_fotografia( 'C:\Users\Public\Pictures\img.jpg', 'PC', 'Milano', 3 );
+CALL aggiungi_fotografia( 'C:\Users\Public\Pictures\img.jpg', 'PC', 'Padova', 3 );
+
+
+CALL inserisci_fotografia_in_cestino( 113 );
+CALL inserisci_fotografia_in_cestino( 116 );
+
+CALL rendi_fotografia_privata_o_pubblica( 114, 'privata' );
+CALL rendi_fotografia_privata_o_pubblica( 119, 'privata' );
+
+CALL crea_video( 3, null );
+CALL inserisci_in_video_formato_da_foto( 115 );
+CALL inserisci_in_video_formato_da_foto( 118 );
+CALL inserisci_in_video_formato_da_foto( 119 );
+
+INSERT INTO foto_raffigura_soggetto( id_foto, id_soggetto )
+VALUES( 113, 8 );
+INSERT INTO foto_raffigura_soggetto( id_foto, id_soggetto )
+VALUES( 114, 9 );
+INSERT INTO foto_raffigura_soggetto( id_foto, id_soggetto )
+VALUES( 114, 2 );
+INSERT INTO foto_raffigura_soggetto( id_foto, id_soggetto )
+VALUES( 115, 10 );
+INSERT INTO foto_raffigura_soggetto( id_foto, id_soggetto )
+VALUES( 115, 3 );
+INSERT INTO foto_raffigura_soggetto( id_foto, id_soggetto )
+VALUES( 115, 2 );
+INSERT INTO foto_raffigura_soggetto( id_foto, id_soggetto )
+VALUES( 116, 7 );
+INSERT INTO foto_raffigura_soggetto( id_foto, id_soggetto )
+VALUES( 118, 1 );
+INSERT INTO foto_raffigura_soggetto( id_foto, id_soggetto )
+VALUES( 118, 9 );
+INSERT INTO foto_raffigura_soggetto( id_foto, id_soggetto )
+VALUES( 119, 6 );
+
+INSERT INTO foto_raffigura_utente( id_foto, id_utente )
+VALUES( 115, 2 );
+INSERT INTO foto_raffigura_utente( id_foto, id_utente )
+VALUES( 118, 1 );
+
+
 
 
 -- POPOLAMENTO COLLEZIONE PERSONALE UTENTE 4
 
+pasquale esposito
+	CALL aggiungi_fotografia( 'C:\Users\Public\Pictures\img.jpg', 'PC', 'Catania', 4);
+	CALL aggiungi_fotografia( 'C:\Users\Public\Pictures\img.jpg', 'PC', 'Salerno', 4 );
+	CALL aggiungi_fotografia( 'C:\Users\Public\Pictures\img.jpg', 'PC', 'Verona', 4 );
+	CALL aggiungi_fotografia( 'C:\Users\Public\Pictures\img.jpg', 'PC', 'Firenza', 4 );
+	CALL aggiungi_fotografia( 'C:\Users\Public\Pictures\img.jpg', 'PC', 'Napoli', 4 );	
+	CALL aggiungi_fotografia( 'C:\Users\Public\Pictures\img.jpg', 'PC', 'Napoli', 4 );
+
+
+	CALL inserisci_fotografia_in_cestino( 123 );
+	CALL inserisci_fotografia_in_cestino( 125 );
+
+	CALL rendi_fotografia_privata_o_pubblica( 120, 'privata' );
+	CALL rendi_fotografia_privata_o_pubblica( 121, 'privata' );
+
+	CALL crea_video( 4, null );
+	CALL inserisci_in_video_formato_da_foto( 120 );
+	CALL inserisci_in_video_formato_da_foto( 122 );
+	CALL inserisci_in_video_formato_da_foto( 124 );
+
+
+	INSERT INTO foto_raffigura_soggetto( id_foto, id_soggetto )
+	VALUES( 120, 1 );
+
+	INSERT INTO foto_raffigura_soggetto( id_foto, id_soggetto )
+	VALUES( 121, 6 );
+
+	INSERT INTO foto_raffigura_soggetto( id_foto, id_soggetto )
+	VALUES( 121, 3 );
+
+	INSERT INTO foto_raffigura_soggetto( id_foto, id_soggetto )
+	VALUES( 122, 10 );
+
+	INSERT INTO foto_raffigura_soggetto( id_foto, id_soggetto )
+	VALUES( 122, 7 );
+
+	INSERT INTO foto_raffigura_soggetto( id_foto, id_soggetto )
+	VALUES( 122, 2 );
+
+	INSERT INTO foto_raffigura_soggetto( id_foto, id_soggetto )
+	VALUES( 123, 4 );
+
+	INSERT INTO foto_raffigura_soggetto( id_foto, id_soggetto )
+	VALUES( 124, 9 );
+
+	INSERT INTO foto_raffigura_soggetto( id_foto, id_soggetto )
+	VALUES( 124, 8 );
+
+	INSERT INTO foto_raffigura_soggetto( id_foto, id_soggetto )
+	VALUES( 125, 2 );
+
+
+	INSERT INTO foto_raffigura_utente( id_foto, id_utente )
+	VALUES( 122, 1 );
+
+	INSERT INTO foto_raffigura_utente( id_foto, id_utente )
+	VALUES( 122, 3 );
+
+	INSERT INTO foto_raffigura_utente( id_foto, id_utente )
+	VALUES( 125, 2 );
 
 
 -- CREAZIONE COLLEZIONI CONDIVISE
