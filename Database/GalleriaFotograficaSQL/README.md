@@ -506,6 +506,7 @@ CREATE OR REPLACE VIEW public.numero_totale_fotografie_e_utenti
  SELECT ( SELECT count(*) AS count
            FROM utente) AS totale_utenti,
     ( SELECT count(*) AS count
+           FROM fotografia) AS totale_foto;
 ```
 	   
 L'unica vista presente nel sistema; essa, sfruttando la possibilità (in Postgres) di effettuare multiple selezioni all'interno dello stesso comando **SELECT**, va a recuperare il numero totale di utenti e di fotografie presenti nel sistema in un'unica tupla. Si è pensato il suo utilizzo all'interno della pagina dell'amministratore, per dargli una panoramica generale della situazione.
